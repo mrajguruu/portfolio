@@ -40,7 +40,7 @@ export const experiences: Experience[] = [
     location: 'Online',
     type: 'Learning Program',
     startDate: '2025-09',
-    endDate: 'Present',
+    endDate: '2025-12',
     description: 'Comprehensive full-stack development program focusing on MERN stack (MongoDB, Express.js, React.js, Node.js), Generative AI integration, data structures and algorithms, DevOps fundamentals, and progressive web applications with real-world project implementations.',
     achievements: [
       'Building full-stack applications using MERN stack with hands-on projects',
@@ -60,7 +60,7 @@ export const experiences: Experience[] = [
     location: 'Online',
     type: 'Learning Program',
     startDate: '2025-07',
-    endDate: 'Present',
+    endDate: '2025-12',
     description: 'Enterprise-level Java full-stack development program covering Core Java, Spring ecosystem, Hibernate ORM, Angular frontend development, and complete web application architecture with database integration and REST API development.',
     achievements: [
       'Mastering Core Java with object-oriented programming, collections framework, and multithreading',
