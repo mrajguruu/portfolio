@@ -265,7 +265,7 @@ This project is open source under the [MIT License](LICENSE).
 
 [![GitHub](https://img.shields.io/badge/GitHub-mrajguruu-181717?style=for-the-badge&logo=github)](https://github.com/mrajguruu)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-mohitrajguru-0A66C2?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/mohitrajguru)
-[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00D9FF?style=for-the-badge&logo=vercel)](https://mohitrajguru.com)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Live-00D9FF?style=for-the-badge&logo=vercel)](https://mohitrajguru.vercel.app)
 
 ⭐ Star this repo if you found it helpful!
 
