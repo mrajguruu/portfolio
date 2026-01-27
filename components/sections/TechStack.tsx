@@ -9,42 +9,42 @@ import SectionHeading from '@/components/ui/SectionHeading'
  * Strictly matching the requested 28 items and layout
  */
 const techStack = [
-  // Row 1 (7)
-  { name: 'Bootstrap', symbol: 'B', atomicNumber: 1, category: 'frontend', brandColor: '#7952B3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', description: 'CSS framework for responsive web design' },
-  { name: 'Chart.js', symbol: 'C', atomicNumber: 2, category: 'frontend', brandColor: '#FF6384', icon: 'https://www.chartjs.org/img/chartjs-logo.svg', description: 'Simple HTML5 Charts using the canvas tag' },
-  { name: 'CSS3', symbol: 'C', atomicNumber: 3, category: 'frontend', brandColor: '#1572B6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', description: 'Styling language for web pages' },
-  { name: 'Docker', symbol: 'D', atomicNumber: 4, category: 'devops', brandColor: '#2496ED', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', description: 'Containerization platform' },
-  { name: 'Eclipse', symbol: 'E', atomicNumber: 5, category: 'tools', brandColor: '#2C2255', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg', description: 'IDE for Java development' },
+  // Row 1: Top Tier (7) - Modern Web Focus
+  { name: 'JavaScript', symbol: 'JS', atomicNumber: 1, category: 'frontend', brandColor: '#F7DF1E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', description: 'Dynamic web programming' },
+  { name: 'TypeScript', symbol: 'TS', atomicNumber: 2, category: 'frontend', brandColor: '#3178C6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', description: 'Typed JavaScript' },
+  { name: 'React', symbol: 'R', atomicNumber: 3, category: 'frontend', brandColor: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', description: 'UI component library' },
+  { name: 'Next.js', symbol: 'N', atomicNumber: 4, category: 'frontend', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', description: 'React framework for production' },
+  { name: 'Node.js', symbol: 'N', atomicNumber: 5, category: 'backend', brandColor: '#339933', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', description: 'JavaScript runtime' },
   { name: 'Express', symbol: 'E', atomicNumber: 6, category: 'backend', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg', description: 'Web framework for Node.js' },
-  { name: 'Firebase', symbol: 'F', atomicNumber: 7, category: 'cloud', brandColor: '#FFCA28', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', description: 'Backend platform by Google' },
+  { name: 'Tailwind CSS', symbol: 'T', atomicNumber: 7, category: 'frontend', brandColor: '#06B6D4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', description: 'Utility-first CSS' },
 
-  // Row 2 (6)
-  { name: 'Git', symbol: 'G', atomicNumber: 8, category: 'tools', brandColor: '#F05032', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', description: 'Version control system' },
-  { name: 'GitHub', symbol: 'GH', atomicNumber: 9, category: 'tools', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', description: 'Git repository hosting' },
-  { name: 'Gradle', symbol: 'G', atomicNumber: 10, category: 'build', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg', description: 'Build automation tool' },
-  { name: 'Hibernate', symbol: 'H', atomicNumber: 11, category: 'backend', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg', description: 'Java ORM framework' },
-  { name: 'HTML5', symbol: 'H', atomicNumber: 12, category: 'frontend', brandColor: '#E34F26', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', description: 'Markup language for web' },
-  { name: 'Java', symbol: 'J', atomicNumber: 13, category: 'backend', brandColor: '#ED8B00', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', description: 'Enterprise programming language' },
+  // Row 2: Mid Tier (6) - Infrastructure & Data
+  { name: 'MongoDB', symbol: 'M', atomicNumber: 8, category: 'database', brandColor: '#47A248', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', description: 'NoSQL document database' },
+  { name: 'MySQL', symbol: 'M', atomicNumber: 9, category: 'database', brandColor: '#4479A1', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', description: 'Relational database' },
+  { name: 'Firebase', symbol: 'F', atomicNumber: 10, category: 'cloud', brandColor: '#FFCA28', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg', description: 'Backend platform by Google' },
+  { name: 'Docker', symbol: 'D', atomicNumber: 11, category: 'devops', brandColor: '#2496ED', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg', description: 'Containerization platform' },
+  { name: 'Git', symbol: 'G', atomicNumber: 12, category: 'tools', brandColor: '#F05032', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg', description: 'Version control system' },
+  { name: 'GitHub', symbol: 'GH', atomicNumber: 13, category: 'tools', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', description: 'Git repository hosting' },
 
-  // Row 3 (5)
-  { name: 'JavaScript', symbol: 'JS', atomicNumber: 14, category: 'frontend', brandColor: '#F7DF1E', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg', description: 'Dynamic web programming' },
-  { name: 'jQuery', symbol: 'JQ', atomicNumber: 15, category: 'frontend', brandColor: '#0769AD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg', description: 'JavaScript library' },
-  { name: 'Maven', symbol: 'M', atomicNumber: 16, category: 'build', brandColor: '#C71A36', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg', description: 'Build automation for Java' },
-  { name: 'MongoDB', symbol: 'M', atomicNumber: 17, category: 'database', brandColor: '#47A248', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg', description: 'NoSQL document database' },
-  { name: 'MySQL', symbol: 'M', atomicNumber: 18, category: 'database', brandColor: '#4479A1', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg', description: 'Relational database' },
+  // Row 3: Foundations (5) - Core Web & Tools
+  { name: 'HTML5', symbol: 'H', atomicNumber: 14, category: 'frontend', brandColor: '#E34F26', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg', description: 'Markup language for web' },
+  { name: 'CSS3', symbol: 'C', atomicNumber: 15, category: 'frontend', brandColor: '#1572B6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg', description: 'Styling language for web pages' },
+  { name: 'Eclipse', symbol: 'E', atomicNumber: 16, category: 'tools', brandColor: '#2C2255', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/eclipse/eclipse-original.svg', description: 'IDE for Java development' },
+  { name: 'Chart.js', symbol: 'C', atomicNumber: 17, category: 'frontend', brandColor: '#FF6384', icon: 'https://www.chartjs.org/img/chartjs-logo.svg', description: 'Simple HTML5 Charts using the canvas tag' },
+  { name: 'Postman', symbol: 'P', atomicNumber: 18, category: 'tools', brandColor: '#FF6C37', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg', description: 'API testing platform' },
 
-  // Row 4 (4)
-  { name: 'Next.js', symbol: 'N', atomicNumber: 19, category: 'frontend', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg', description: 'React framework for production' },
-  { name: 'Node.js', symbol: 'N', atomicNumber: 20, category: 'backend', brandColor: '#339933', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg', description: 'JavaScript runtime' },
-  { name: 'PHP', symbol: 'P', atomicNumber: 21, category: 'backend', brandColor: '#777BB4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', description: 'Server-side scripting language' },
-  { name: 'Postman', symbol: 'P', atomicNumber: 22, category: 'tools', brandColor: '#FF6C37', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg', description: 'API testing platform' },
+  // Row 4: Support (4) - Enterprise & Backend
+  { name: 'PHP', symbol: 'P', atomicNumber: 19, category: 'backend', brandColor: '#777BB4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg', description: 'Server-side scripting language' },
+  { name: 'Java', symbol: 'J', atomicNumber: 20, category: 'backend', brandColor: '#ED8B00', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg', description: 'Enterprise programming language' },
+  { name: 'Spring Boot', symbol: 'SB', atomicNumber: 21, category: 'backend', brandColor: '#6DB33F', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', description: 'Java framework' },
+  { name: 'Hibernate', symbol: 'H', atomicNumber: 22, category: 'backend', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/hibernate/hibernate-original.svg', description: 'Java ORM framework' },
 
-  // Row 5 (6)
-  { name: 'React', symbol: 'R', atomicNumber: 23, category: 'frontend', brandColor: '#61DAFB', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg', description: 'UI component library' },
-  { name: 'Spring Boot', symbol: 'SB', atomicNumber: 24, category: 'backend', brandColor: '#6DB33F', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg', description: 'Java framework' },
-  { name: 'Tailwind CSS', symbol: 'T', atomicNumber: 25, category: 'frontend', brandColor: '#06B6D4', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg', description: 'Utility-first CSS' },
-  { name: 'Tomcat', symbol: 'T', atomicNumber: 26, category: 'server', brandColor: '#F8DC75', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg', description: 'Web server for Java' },
-  { name: 'TypeScript', symbol: 'TS', atomicNumber: 27, category: 'frontend', brandColor: '#3178C6', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg', description: 'Typed JavaScript' },
+  // Row 5: Legacy / Tooling (6) - Build Systems & Support
+  { name: 'Bootstrap', symbol: 'B', atomicNumber: 23, category: 'frontend', brandColor: '#7952B3', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg', description: 'CSS framework for responsive web design' },
+  { name: 'jQuery', symbol: 'JQ', atomicNumber: 24, category: 'frontend', brandColor: '#0769AD', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg', description: 'JavaScript library' },
+  { name: 'Tomcat', symbol: 'T', atomicNumber: 25, category: 'server', brandColor: '#F8DC75', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tomcat/tomcat-original.svg', description: 'Web server for Java' },
+  { name: 'Maven', symbol: 'M', atomicNumber: 26, category: 'build', brandColor: '#C71A36', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg', description: 'Build automation for Java' },
+  { name: 'Gradle', symbol: 'G', atomicNumber: 27, category: 'build', brandColor: '#59666C', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gradle/gradle-original.svg', description: 'Build automation tool' },
   { name: 'VS Code', symbol: 'V', atomicNumber: 28, category: 'tools', brandColor: '#007ACC', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg', description: 'Code editor' }
 ]
 
