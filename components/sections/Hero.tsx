@@ -166,10 +166,10 @@ const Hero = memo(() => {
 
       {/* Scroll Indicator */}
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, x: "-50%" }}
+        animate={{ opacity: 1, x: "-50%" }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 text-white/30"
+        className="absolute bottom-10 left-1/2 flex flex-col items-center gap-3 text-white/30"
       >
         <span className="text-sm font-medium tracking-widest uppercase">Scroll to explore</span>
         <motion.div

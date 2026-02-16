@@ -114,7 +114,7 @@ export const projects: Project[] = [
     tags: ['Full-Stack', 'Cloud-Native', 'TiDB Cloud', 'Render.com'],
     category: 'fullstack',
     featured: true,
-    liveUrl: 'https://taskflow-wbld.onrender.com',
+    liveUrl: 'https://taskflow-l6ae.onrender.com/',
     githubUrl: 'https://github.com/mrajguruu/TaskFlow',
     technologies: ['PHP', 'JavaScript', 'Docker', 'MySQL'],
     year: '2025',

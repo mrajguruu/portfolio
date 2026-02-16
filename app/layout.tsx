@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
@@ -15,6 +15,12 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#3b82f6',
+}
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NODE_ENV === 'production'
@@ -82,8 +88,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} scroll-smooth`}>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-        <meta name="theme-color" content="#3b82f6" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="Mohit Rajguru" />

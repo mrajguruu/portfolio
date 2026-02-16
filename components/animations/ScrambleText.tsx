@@ -75,7 +75,7 @@ const ScrambleText = memo(({
     // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         scrambleTo(words[0])
-    }, [])
+    }, [scrambleTo, words])
 
     return (
         <span className={`font-mono transition-opacity duration-300 ${className}`}>
