@@ -164,58 +164,38 @@ body {
   }
 
   .project-card-glass {
-    background: rgba(255, 255, 255, 0.03) !important;
-    backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow:
       0 8px 32px rgba(0, 0, 0, 0.3),
       0 0 0 1px rgba(255, 255, 255, 0.05),
-      inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-    padding: 0 !important;
-    min-height: 500px !important;
-    max-width: 1200px !important;
-    margin: 0 auto !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0;
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .project-card-glass:hover {
-    background: rgba(255, 255, 255, 0.05) !important;
-    border-color: rgba(255, 255, 255, 0.12) !important;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.12);
     box-shadow:
       0 20px 60px rgba(0, 0, 0, 0.4),
       0 0 0 1px rgba(255, 255, 255, 0.08),
-      inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
-    transform: translateY(-2px) !important;
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
   }
 
-  /* Desktop GlassCard Uniform Size */
   @media (min-width: 768px) {
-    .project-card-glass {
-      height: 500px !important;
-      max-width: 1000px !important;
-      width: 100% !important;
+    .project-card-grid {
+      min-height: 480px;
     }
   }
 
   @media (min-width: 1024px) {
-    .project-card-glass {
-      height: 550px !important;
-      max-width: 1200px !important;
-      width: 100% !important;
-    }
-  }
-
-  /* Ensure bottom section is always visible */
-  @media (min-width: 768px) {
-    .project-card-content>div:last-child {
-      margin-top: auto !important;
-      flex-shrink: 0 !important;
-    }
-
-    .project-card-bottom-text {
-      display: block !important;
-      visibility: visible !important;
-      opacity: 1 !important;
+    .project-card-grid {
+      min-height: 500px;
     }
   }
 

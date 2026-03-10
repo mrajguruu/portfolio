@@ -20,6 +20,8 @@ const techIcons: Record<string, string> = {
   'CSS': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
   'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
   'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  'React': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
 }
 
 function ExperienceModal({ experience, onClose }: { experience: ExperienceType; onClose: () => void }) {
@@ -64,15 +66,19 @@ function ExperienceModal({ experience, onClose }: { experience: ExperienceType; 
               <MapPin size={12} />
               {experience.location}
             </span>
-            <span className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-xs font-medium border border-emerald-500/30 flex items-center gap-1.5">
-              <div className="w-2 h-2 bg-emerald-400 rounded-full" />
-              Completed
+            <span className={`px-3 py-1 rounded-full text-xs font-medium border flex items-center gap-1.5 ${
+              experience.endDate === 'Present'
+                ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+            }`}>
+              <div className={`w-2 h-2 rounded-full ${experience.endDate === 'Present' ? 'bg-emerald-400 animate-pulse' : 'bg-blue-400'}`} />
+              {experience.endDate === 'Present' ? 'Active' : 'Completed'}
             </span>
           </div>
           <div className="flex items-center gap-4 mb-4">
             {experience.logo && (
               <motion.div
-                className="w-20 h-20 md:w-24 md:h-24 rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-white flex-shrink-0"
+                className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border border-white/10 shadow-lg bg-white flex-shrink-0"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.1 }}
@@ -156,8 +162,6 @@ const Experience = memo(function Experience() {
   const isInView = useInView(sectionRef, { once: true, margin: "-100px" })
   const [selectedExperience, setSelectedExperience] = useState<ExperienceType | null>(null)
 
-  const exp = experiences[0]
-
   return (
     <section ref={sectionRef} id="experience" className="section-padding relative overflow-hidden bg-black">
       <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
@@ -171,97 +175,104 @@ const Experience = memo(function Experience() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <SectionHeading title="Learning Journey" subtitle="Building expertise through structured training" />
+          <SectionHeading title="Experience" subtitle="Professional journey and structured training" />
         </motion.div>
 
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <motion.div whileHover={{ y: -5, scale: 1.005 }} transition={{ duration: 0.3, ease: "easeOut" }}>
-              <GlassCard variant="heavy" className="p-8 md:p-12 hover:bg-white/8 transition-all duration-300 group relative overflow-visible">
-                <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br from-primary-500/15 to-purple-500/15 rounded-full blur-3xl" />
+        <div className="max-w-4xl mx-auto space-y-8">
+          {experiences.map((exp, expIndex) => (
+            <motion.div
+              key={exp.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: expIndex * 0.15 }}
+              viewport={{ once: true }}
+            >
+              <motion.div whileHover={{ y: -5, scale: 1.005 }} transition={{ duration: 0.3, ease: "easeOut" }}>
+                <GlassCard variant="heavy" className="p-8 md:p-12 hover:bg-white/8 transition-all duration-300 group relative overflow-visible">
+                  <div className="absolute -top-20 -right-20 w-60 h-60 bg-gradient-to-br from-primary-500/15 to-purple-500/15 rounded-full blur-3xl" />
 
-                <div className="space-y-6">
-                  <div className="flex items-center gap-6">
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-2xl border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300 flex-shrink-0 bg-white group-hover:shadow-xl group-hover:shadow-primary-500/20">
-                      {exp.logo ? (
-                        <img src={exp.logo} alt={`${exp.company} logo`} className="w-full h-full object-cover rounded-xl" />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-primary-500 to-purple-500 flex items-center justify-center text-white font-bold text-2xl">
-                          {exp.company.split(' ').map(word => word[0]).join('').slice(0, 2)}
-                        </div>
-                      )}
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-6">
+                      <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full border border-white/10 flex items-center justify-center overflow-hidden transition-all duration-300 flex-shrink-0 bg-white group-hover:shadow-xl group-hover:shadow-primary-500/20">
+                        {exp.logo ? (
+                          <img src={exp.logo} alt={`${exp.company} logo`} className="w-full h-full object-cover" />
+                        ) : (
+                          <div className="w-full h-full bg-gradient-to-br from-primary-500 to-purple-500 flex items-center justify-center text-white font-bold text-2xl">
+                            {exp.company.split(' ').map(word => word[0]).join('').slice(0, 2)}
+                          </div>
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{exp.title}</h3>
+                        <div className="text-primary-400 text-lg md:text-xl font-medium">{exp.company}</div>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2">{exp.title}</h3>
-                      <div className="text-primary-400 text-lg md:text-xl font-medium">{exp.company}</div>
-                    </div>
-                  </div>
 
-                  <div className="flex flex-wrap items-center gap-2">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-full text-xs font-semibold text-primary-300 border border-primary-500/30">
-                      <GraduationCap className="w-3.5 h-3.5" />
-                      {exp.type}
-                    </div>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-xs font-medium text-white/70 border border-white/10">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - {exp.endDate === 'Present' ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
-                    </div>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-xs font-medium text-white/70 border border-white/10">
-                      <MapPin className="w-3.5 h-3.5" />
-                      {exp.location}
-                    </div>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/20 rounded-full text-xs font-medium text-emerald-400 border border-emerald-500/30">
-                      <div className="w-2 h-2 bg-emerald-400 rounded-full" />
-                      Completed
-                    </div>
-                  </div>
-
-                  <p className="text-white/70 text-base md:text-lg leading-relaxed">{exp.description}</p>
-
-                  <div className="space-y-3">
-                    <h4 className="text-sm font-semibold text-white/80 flex items-center gap-2">
-                      <Code className="w-4 h-4 text-primary-400" />
-                      Key Technologies
-                    </h4>
                     <div className="flex flex-wrap items-center gap-2">
-                      {exp.technologies.slice(0, 5).map((tech) => (
-                        <div key={tech} className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg text-sm text-white/80 border border-white/10 hover:border-white/25 transition-colors">
-                          {techIcons[tech] && <img src={techIcons[tech]} alt={tech} className="w-4 h-4" />}
-                          <span>{tech}</span>
-                        </div>
-                      ))}
-                      {exp.technologies.length > 5 && (
-                        <div className="px-3 py-2 bg-primary-500/10 rounded-lg text-sm text-primary-400 border border-primary-500/20 font-medium">
-                          +{exp.technologies.length - 5} more
-                        </div>
-                      )}
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-primary-500/20 to-primary-600/20 rounded-full text-xs font-semibold text-primary-300 border border-primary-500/30">
+                        {exp.type === 'Learning Program' ? <GraduationCap className="w-3.5 h-3.5" /> : <Briefcase className="w-3.5 h-3.5" />}
+                        {exp.type}
+                      </div>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-xs font-medium text-white/70 border border-white/10">
+                        <Calendar className="w-3.5 h-3.5" />
+                        {new Date(exp.startDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })} - {exp.endDate === 'Present' ? 'Present' : new Date(exp.endDate).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}
+                      </div>
+                      <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white/5 rounded-full text-xs font-medium text-white/70 border border-white/10">
+                        <MapPin className="w-3.5 h-3.5" />
+                        {exp.location}
+                      </div>
+                      <div className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium border ${
+                        exp.endDate === 'Present'
+                          ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/30'
+                          : 'bg-blue-500/20 text-blue-400 border-blue-500/30'
+                      }`}>
+                        <div className={`w-2 h-2 rounded-full ${exp.endDate === 'Present' ? 'bg-emerald-400 animate-pulse' : 'bg-blue-400'}`} />
+                        {exp.endDate === 'Present' ? 'Active' : 'Completed'}
+                      </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-white/10">
-                    <div className="flex items-center gap-2 text-sm text-white/50">
-                      <Award className="w-4 h-4 text-primary-400" />
-                      <span>{exp.achievements.length} Key Achievements</span>
+                    <p className="text-white/70 text-base md:text-lg leading-relaxed">{exp.description}</p>
+
+                    <div className="space-y-3">
+                      <h4 className="text-sm font-semibold text-white/80 flex items-center gap-2">
+                        <Code className="w-4 h-4 text-primary-400" />
+                        Key Technologies
+                      </h4>
+                      <div className="flex flex-wrap items-center gap-2">
+                        {exp.technologies.slice(0, 5).map((tech) => (
+                          <div key={tech} className="flex items-center gap-2 px-3 py-2 bg-white/5 rounded-lg text-sm text-white/80 border border-white/10 hover:border-white/25 transition-colors">
+                            {techIcons[tech] && <img src={techIcons[tech]} alt={tech} className="w-4 h-4" />}
+                            <span>{tech}</span>
+                          </div>
+                        ))}
+                        {exp.technologies.length > 5 && (
+                          <div className="px-3 py-2 bg-primary-500/10 rounded-lg text-sm text-primary-400 border border-primary-500/20 font-medium">
+                            +{exp.technologies.length - 5} more
+                          </div>
+                        )}
+                      </div>
                     </div>
-                    <motion.button
-                      onClick={() => setSelectedExperience(exp)}
-                      className="flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-primary-500/20 to-purple-500/20 hover:from-primary-500/30 hover:to-purple-500/30 border border-primary-500/30 hover:border-primary-500/50 backdrop-blur-sm transition-all duration-300"
-                      whileHover={{ scale: 1.03, y: -2 }}
-                      whileTap={{ scale: 0.98 }}
-                    >
-                      <Info size={16} className="text-primary-400" />
-                      View Details
-                    </motion.button>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-white/10">
+                      <div className="flex items-center gap-2 text-sm text-white/50">
+                        <Award className="w-4 h-4 text-primary-400" />
+                        <span>{exp.achievements.length} Key Achievements</span>
+                      </div>
+                      <motion.button
+                        onClick={() => setSelectedExperience(exp)}
+                        className="flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium text-white bg-gradient-to-r from-primary-500/20 to-purple-500/20 hover:from-primary-500/30 hover:to-purple-500/30 border border-primary-500/30 hover:border-primary-500/50 backdrop-blur-sm transition-all duration-300"
+                        whileHover={{ scale: 1.03, y: -2 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <Info size={16} className="text-primary-400" />
+                        View Details
+                      </motion.button>
+                    </div>
                   </div>
-                </div>
-              </GlassCard>
+                </GlassCard>
+              </motion.div>
             </motion.div>
-          </motion.div>
+          ))}
         </div>
       </div>
 

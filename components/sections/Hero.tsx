@@ -136,7 +136,7 @@ const Hero = memo(() => {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="text-base md:text-xl lg:text-2xl text-white/50 max-w-3xl mx-auto leading-relaxed px-2"
           >
-            Specializing in building scalable applications with modern architecture and pixel-perfect design.
+            Building web interfaces at Uffizio · Crafting mobile apps for myself · Shipping code that actually runs.
           </motion.p>
 
           {/* Stats Banner */}
@@ -148,12 +148,12 @@ const Hero = memo(() => {
           >
             <span className="flex items-center gap-1.5 md:gap-2">
               <Rocket className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary-400" />
-              <span className="text-sm md:text-sm font-medium text-white/90">2 Projects Deployed</span>
+              <span className="text-sm md:text-sm font-medium text-white/90">3 Projects Deployed</span>
             </span>
             <span className="text-white/30 text-xs">•</span>
             <span className="flex items-center gap-1.5 md:gap-2">
               <Terminal className="w-3.5 h-3.5 md:w-4 md:h-4 text-purple-400" />
-              <span className="text-sm md:text-sm font-medium text-white/90">5000+ Lines</span>
+              <span className="text-sm md:text-sm font-medium text-white/90">10,000+ Lines</span>
             </span>
             <span className="text-white/30 text-xs">•</span>
             <span className="flex items-center gap-1.5 md:gap-2">

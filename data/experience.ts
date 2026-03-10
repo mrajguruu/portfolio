@@ -34,6 +34,24 @@ export interface Experience {
  */
 export const experiences: Experience[] = [
   {
+    id: '0',
+    title: 'Frontend Programmer Trainee',
+    company: 'Uffizio',
+    location: 'Valsad, Gujarat, India',
+    type: 'Full-time',
+    startDate: '2026-03',
+    endDate: 'Present',
+    description: 'Building responsive, pixel-perfect web interfaces as part of a product development team.',
+    achievements: [
+      'Building responsive web interfaces using HTML, CSS, and JavaScript',
+      'Implementing UI components from design specifications',
+      'Writing clean, maintainable frontend code',
+      'Contributing within a real product development environment',
+    ],
+    technologies: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'Git'],
+    logo: '/experience/uffizio.png',
+  },
+  {
     id: '1',
     title: 'Java Full-Stack Development Trainee',
     company: 'QSpider Institute',

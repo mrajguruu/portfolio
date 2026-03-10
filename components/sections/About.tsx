@@ -98,7 +98,7 @@ const About = memo(() => {
                       <div className="absolute inset-0 w-3 h-3 bg-green-400 rounded-full animate-ping opacity-75" />
                     </div>
                     <span className="text-xs lg:text-sm font-semibold text-white group-hover:text-green-400 transition-colors duration-300">
-                      Available for work
+                      Frontend Dev at Uffizio
                     </span>
                   </div>
                 </motion.div>
@@ -161,7 +161,7 @@ const About = memo(() => {
 
               <div className="space-y-4 text-white/70 leading-relaxed text-sm md:text-base">
                 <p>
-                  I&apos;m a <span className="text-white font-medium">Full-Stack Developer</span> who turned curiosity into code and classroom projects into production applications. What started as tinkering with HTML in school evolved into building scalable web applications with modern technologies—React, Next.js, TypeScript on the frontend, and Java Spring Boot, PHP on the backend.
+                  I&apos;m a <span className="text-white font-medium">Full-Stack Developer</span> currently working as a Frontend Programmer Trainee at Uffizio, building responsive web interfaces for real users. What started as tinkering with custom ROMs on my OnePlus 7 evolved into shipping production applications across web and mobile.
                 </p>
 
                 <p>
@@ -173,11 +173,11 @@ const About = memo(() => {
                 </p>
 
                 <p>
-                  Beyond the keyboard, I&apos;m a cricket player, badminton enthusiast, and gaming strategist. My side quest? Testing custom ROMs for OnePlus 7—because breaking things in a controlled environment is basically debugging at scale.
+                  Beyond the keyboard — cricket, badminton, gaming, and still testing custom ROMs. Some habits don&apos;t die.
                 </p>
 
                 <p className="text-white/90 font-medium">
-                  Ready to bring technical skills, fresh perspective, and genuine passion to a team building software that matters.
+                  Currently building at Uffizio by day. Building for myself by night.
                 </p>
               </div>
             </div>

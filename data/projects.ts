@@ -105,6 +105,25 @@ export const techIcons: Record<string, string> = {
  */
 export const projects: Project[] = [
   {
+    id: 'project-0',
+    title: 'FORTIS',
+    description: 'Offline-first gym tracking app with real-time PR detection, 100-level XP system, and a gamified training experience — built entirely for myself.',
+    longDescription: 'FORTIS is a personal gym tracking app I built from scratch because every existing app was either too basic, too bloated, or too ugly. So I stopped searching and started building.\n\nThe app is 100% offline-first — SQLite on-device, no server, no subscription, no account needed. Every workout, every PR, every achievement lives on your device.\n\nReal-time PR detection across 4 types simultaneously — Weight PR, Rep PR, Estimated 1RM, and Volume PR — all checked during a live session with zero lag. Took 4 complete rewrites to get right. The 3 deleted versions were the real teachers.\n\nA 100-level XP system (Rookie → Athlete → Champion → Titan) with 44 achievements across Bronze, Silver, Gold, and Diamond tiers. Full-screen PR celebration with confetti, haptics, and sound. 6-axis performance radar — STR / END / TEC / VOL / CON / INT.\n\nReadiness Score (0–100) based on sleep, soreness, and mood. Progressive overload suggestions from your actual history. Delta tracking across 10+ body measurements.\n\n6,000+ lines of code. 145+ exercises. 14+ screens. 50+ features. Built solo. Proprietary — not open source.',
+    image: '/projects/fortis.png',
+    favicon: '/projects/fortis favicon.png',
+    tags: ['React Native', 'Offline-First', 'SQLite', 'Personal Project'],
+    category: 'mobile',
+    featured: true,
+    technologies: ['React Native', 'TypeScript', 'SQLite', 'Zustand', 'Expo'],
+    year: '2026',
+    status: 'completed',
+    accentColor: {
+      primary: '#4A90D9',      // FORTIS blue accent
+      secondary: '#1E3A5F',    // FORTIS dark navy
+      gradient: 'linear-gradient(135deg, #4A90D9, #1E3A5F)'
+    }
+  },
+  {
     id: 'project-1',
     title: 'TaskFlow',
     description: 'Cloud-native task management platform with drag-and-drop Kanban board, role-based access control, and real-time updates.',

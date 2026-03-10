@@ -380,8 +380,8 @@ const ProjectSlider = memo(() => {
           </div>
 
           {/* Content Section */}
-          <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-between min-h-[320px] md:min-h-[395px] lg:min-h-[450px] project-card-content overflow-hidden">
-            <div className="overflow-hidden">
+          <div className="p-6 md:p-8 lg:p-10 flex flex-col project-card-content">
+            <div className="flex-1">
               {/* Title */}
               <AnimatePresence mode="wait">
                 <motion.h3
@@ -390,10 +390,31 @@ const ProjectSlider = memo(() => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent project-card-title"
+                  className="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent project-card-title"
                 >
                   {currentProject.title}
                 </motion.h3>
+              </AnimatePresence>
+
+              {/* Tags */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={`tags-${currentIndex}`}
+                  initial={{ opacity: 0, y: 15 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -15 }}
+                  transition={{ duration: 0.25, delay: 0.03 }}
+                  className="flex flex-wrap gap-1.5 mb-4"
+                >
+                  {currentProject.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2.5 py-1 rounded-full text-xs font-medium text-white/60 bg-white/5 border border-white/10"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </motion.div>
               </AnimatePresence>
 
               {/* Description */}
@@ -404,7 +425,7 @@ const ProjectSlider = memo(() => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: 0.05 }}
-                  className="text-white/70 text-base lg:text-lg leading-relaxed mb-6 project-card-description line-clamp-3"
+                  className="text-white/70 text-base lg:text-lg leading-relaxed mb-6 project-card-description line-clamp-2"
                 >
                   {currentProject.description}
                 </motion.p>
@@ -418,7 +439,7 @@ const ProjectSlider = memo(() => {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3, delay: 0.1 }}
-                  className="flex flex-wrap gap-2 mb-4 project-card-tags-container"
+                  className="flex flex-wrap gap-2 project-card-tags-container"
                 >
                   {currentProject.technologies.map((tech, index) => (
                     <motion.div
@@ -441,35 +462,10 @@ const ProjectSlider = memo(() => {
                   ))}
                 </motion.div>
               </AnimatePresence>
-
-              {/* Project Tags */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={`tags-${currentIndex}`}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.3, delay: 0.15 }}
-                  className="flex flex-wrap gap-2 project-card-tags-container"
-                >
-                  {currentProject.tags.map((tag, index) => (
-                    <motion.span
-                      key={tag}
-                      className="px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 text-white/70 border border-white/10 project-card-project-tag"
-                      whileHover={{ scale: 1.05 }}
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.2 + index * 0.05 }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </AnimatePresence>
             </div>
 
             {/* Bottom Info */}
-            <div className="mt-4 flex items-center justify-between">
+            <div className="mt-4 pt-4 border-t border-white/10 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-4">
                 <motion.span
                   className="text-white/40 text-sm font-medium project-card-bottom-text"
